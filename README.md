@@ -6,7 +6,7 @@ The purpose of the Digital Biomarker Discovery Pipeline is to provide code sets 
 
 <img width="341" alt="DBDP" src="https://user-images.githubusercontent.com/43549914/73032051-ea9de480-3e0b-11ea-9f1c-1a1c490c973b.PNG">
 
-***
+
 
 ### Code Available Now:
 ***
@@ -19,4 +19,5 @@ The purpose of the Digital Biomarker Discovery Pipeline is to provide code sets 
 
 
 ### Code Coming Soon:
+***
 * Exploratory Data Analysis in Python and R
