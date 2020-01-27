@@ -1,0 +1,19 @@
+# NameofFile
+Description of what this file does
+***
+
+##### **Input:** Input type of file
+##### **Output:** What is produced as a result of file? Plots? A new file? A trained model?
+##### **Dependencies:** List dependencies of code here
+***
+
+##### Format of input: 
+
+***
+
+**Check:** 
+* List things they may need to check in the code
+
+**Sources:**
+
+***
