@@ -8,5 +8,5 @@ Copy/Paste README.md from Instructions to your folder and add content following 
 
 At the top of each file, place markdown found in 'Markdown for top of each file.txt" and add content following format
 
-Let repo director (currently Brinnae) know so she can approve and add you to the README.md on the front page. Do NOT add yourself to the front page repo until it has been approved. 
+Create Issue in DBDP to let repo director (currently Brinnae) know so she can approve and add you to the README.md on the front page. Do NOT add yourself to the front page repo until it has been approved. 
 
