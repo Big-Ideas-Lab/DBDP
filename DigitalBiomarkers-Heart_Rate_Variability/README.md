@@ -12,4 +12,4 @@ HRV (time domain and frequency domain) metrics, validated by Kubios, the clinica
 #### Code Available Now:
 ***
 
-* *E4FileFormatter.ipynb* - Python Notebook that takes as input files from a longitudinal study with an Empatica E4 and compiles data into .csv files for each sensor with timestamps (ISO 8601) adjusted for time zone.
+* *DBDP.ipynb* - Python Notebook with function that calculates Heart Rate Variability (HRV) metrics from IBI/RR intervals 
