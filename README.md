@@ -8,16 +8,3 @@ The purpose of the Digital Biomarker Discovery Pipeline is to provide code sets 
 
 
 
-### Code Available Now:
-***
-
-**General:**
-* *DBDP.ipynb* - Python Notebook with function that calculates Heart Rate Variability (HRV) metrics from IBI/RR intervals 
-
-**Empatica E4 Device:**
-* *E4FileFormatter.ipynb* - Python Notebook that takes as input files from a longitudinal study with an Empatica E4 and compiles data into .csv files for each sensor with timestamps (ISO 8601) adjusted for time zone.
-
-
-### Code Coming Soon:
-***
-* Exploratory Data Analysis in Python and R
