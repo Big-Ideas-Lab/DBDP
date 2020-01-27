@@ -13,3 +13,8 @@ HRV (time domain and frequency domain) metrics, validated by Kubios, the clinica
 ***
 
 * *DBDP.ipynb* - Python Notebook with function that calculates Heart Rate Variability (HRV) metrics from IBI/RR intervals 
+
+***
+
+**Sources:**
+* https://www.firstbeat.com/en/blog/what-is-heart-rate-variability-hrv/
