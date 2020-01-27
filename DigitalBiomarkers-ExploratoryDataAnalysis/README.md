@@ -1,4 +1,4 @@
-# Resting Heart Rate
+# Exploratory Data Analysis
 
 **Objectives:**
 
