@@ -4,7 +4,6 @@ Wearables data can be messy and typically needs considerable pre-processing in o
 
 ### The preprocessing repo is organized by wearable device
 
-***
 
 ### Code Available Now:
 ***
