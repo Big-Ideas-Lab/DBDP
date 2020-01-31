@@ -7,8 +7,6 @@ library(tidyverse)
 library(dplyr)
 library(lubridate)
 library(tidyr)
-library(bigmemory)
-library(biganalytics)
 library(anytime)
 
 
