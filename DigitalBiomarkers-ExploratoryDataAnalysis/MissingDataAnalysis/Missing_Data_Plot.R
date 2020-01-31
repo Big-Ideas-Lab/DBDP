@@ -46,7 +46,7 @@ plt_missing_data <- function(df, hertz, timezone, num_days){
   
   df_missing_data <- ggplot(df_missing_perHour, aes(index_day, hour, fill = count))+
     geom_tile()+
-    facet_wrap(~subject_id, nrow=5)+
+    facet_wrap(~subject_id)+
     scale_fill_gradient(
       guide = guide_colorbar(label = TRUE,
                              draw.ulim = TRUE, 
