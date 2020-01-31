@@ -1,0 +1,2 @@
+Preprocessing and exploratory data analysis (EDA) of basis device data from the "Digital Health: Tracking Physiomes and Activity Using Wearable Biosensors Reveals Useful Health-Related Information" paper. Data is available at: https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2001402#sec014. 
+Individual device data were available with four parameters: time, heart rate (hr), acceleration magnitude (accel_magnitude), skin temperature (skin_temp). Some participant's data was split into two files so they were merged together before inputting into the code.
