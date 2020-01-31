@@ -1,0 +1,156 @@
+---
+title: "Basis Device Preprocessing and EDA"
+author: "Peter Cho"
+date: "9/13/2019"
+output: pdf_document
+---
+
+# Load the libraries
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(Hmisc)
+library(mltools)
+library(lsr)
+library(binr)
+library(reshape)
+library(RSQLite)
+library(ProjectTemplate)
+```
+
+# Recreate supplementary figures from open access tidied data set
+```{r setup, include=FALSE}
+og_clean_PLOS <- readxl::read_xlsx("C:/Users/chope/Downloads/stanford/wearables/Support_data_for_Figures/S4 Fig/FigS4AB.xlsx", col_names = FALSE)
+og_clean_PLOS <- t(og_clean_PLOS[,-c(1)]) 
+rownames(og_clean_PLOS) <- 1:nrow(og_clean_PLOS)
+melt_clean_PLOS = melt(og_clean_PLOS)
+
+ggplot(melt_clean_PLOS, aes(x = X1, y = value, color = as.factor(X2))) +
+  geom_line() +
+  xlab("Activity Ventile") +
+  ylab("HR") + 
+  ggtitle("Tidied Data PLOS HR vs. Activity Ventile")
+# ggsave("og_PLOS_Figure_Linear.png")
+
+cor_melt_clean_PLOS <- melt_clean_PLOS %>% 
+  group_by(X2) %>% 
+  summarise(d = cor(1:19, value))
+
+ggplot(cor_melt_clean_PLOS) +
+  geom_point(aes(x = X2, y = d))+
+  xlab("Participant Number") + 
+  ylab("Correlation Coefficient HR~Activity Ventile") + 
+  ggtitle("Tidied Data PLOS Correlation Coefficient HR vs. Activity Ventile")
+# ggsave("og_PLOS_Figure_Points.png")
+
+```
+
+# Generate supplementary figures from unprocessed watch data set
+
+## Select watch data for one participant. Change path according to file location
+```{r setup, include=FALSE}
+single_participant <- read.csv("C:/Users/chope/Downloads/stanford/wearables/Transfer Folder/Basis_003.csv") 
+```
+
+### Exploratory Analysis and Segmenting
+```{r setup, include=FALSE}
+colnames(single_participant)
+head(single_participant)
+portion <- trunc((nrow(single_participant))*0.001)
+sample_single_participant <- sample(levels(single_participant$time), portion)
+sample_single_participant <- sample(single_participant$hr, portion)
+sum(is.na(single_participant$hr))/nrow(single_participant) # simple summary statistics
+sum(is.na(single_participant$accel_magnitude))/nrow(single_participant) # simple summary statistics
+sum(is.na(single_participant$skin_temp))/nrow(single_participant) # simple summary statistics
+```
+
+### Preprocessing Stage
+```{r setup, include=FALSE}
+cc_single_participant <- single_participant %>%
+  select("hr", "accel_magnitude") %>% 
+  na.omit() %>% 
+  arrange(accel_magnitude) %>% 
+  mutate(count = row_number())
+rp_data <- tapply(cc_single_participant$hr, cut(cc_single_participant$count, 19), mean)
+rp_data
+```
+
+### Test code for the ventile calculation
+```{r setup, include=FALSE}
+complete_clean_single_participant[, "reorder"] <- bin_data(complete_clean_single_participant$accel_magnitude, bins=20, binType = "quantile")
+complete_clean_single_participant$reorder <- as.numeric(cut2(complete_clean_single_participant$accel_magnitude, m = length(complete_clean_single_participant$accel_magnitude)/25, g = 40))
+complete_clean_single_participant$reorder <- quantileCut(complete_clean_single_participant$accel_magnitude, 20)
+complete_clean_single_participant$reorder <- bins.quantiles(complete_clean_single_participant$accel_magnitude, max.breaks = length(complete_clean_single_participant$accel_magnitude)/10, 20)
+
+
+sim_single_participant <- complete_clean_single_participant %>% 
+  group_by(reorder) %>% 
+  summarise(avg_hr = mean(hr), number_val = n())
+```
+
+## Select watch data for all participants and generate activity ventiles for each participant. Change path according to file location
+```{r}
+files <- list.files(path="C:/Users/chope/Downloads/stanford/wearables/Transfer Folder", pattern="*.csv", full.names=TRUE, recursive=FALSE)
+
+activity_ventile <- function(single_participant_csv){
+  single_participant <- read.csv(single_participant_csv)
+  cc_single_participant <- single_participant %>%
+    select("hr", "accel_magnitude") %>% 
+    na.omit() %>% 
+    arrange(accel_magnitude) %>% 
+    mutate(count = row_number())
+  rp_data <- tapply(cc_single_participant$hr, cut(cc_single_participant$count, 19), mean)
+  return(as.data.frame(rp_data))
+}
+
+lapply(files, activity_ventile) %>% 
+  bind_rows() -> combined_df
+
+raw_PLOS <- data.matrix(combined_df)
+raw_PLOS <- matrix(raw_PLOS, nrow = 43, ncol = 19, byrow=TRUE)
+raw_PLOS <- as.data.frame(t(raw_PLOS))
+```
+
+## Generate the graphs for the raw data
+```{r}
+raw_PLOS <- raw_PLOS %>% 
+  mutate(id = 1:nrow(raw_PLOS))
+melt_raw_PLOS <- melt(raw_PLOS, id = "id") 
+
+ggplot(melt_raw_PLOS, aes(x = id, y = value, color = as.factor(variable))) +
+  geom_line() +
+  xlab("Activity Ventile") +
+  ylab("HR") + 
+  ggtitle("Raw PLOS HR vs. Activity Ventile")
+# ggsave("raw_PLOS_Figure_Linear.png")
+
+cor_melt_raw_PLOS <- melt_raw_PLOS %>% 
+  group_by(variable) %>% 
+  summarise(d = cor(1:19, value))
+
+ggplot(cor_melt_raw_PLOS) +
+  geom_point(aes(x = 1:nrow(cor_melt_raw_PLOS), y = d))+
+  xlab("Participant Number") + 
+  ylab("Correlation Coefficient HR~Activity Ventile") + 
+  ggtitle("Raw PLOS Correlation Coefficient HR vs. Activity Ventile")
+# ggsave("raw_PLOS_Figure_Points.png")
+```
+
+## Pre-processed PLOS data. Change file path with the preprocessed watch database. Still need to add EDA to this section.
+```{r}
+filename <- "C:/Users/chope/Google Drive/Grad School/Digital Functional Capacity/wearables_clinical_deID.db"
+sqlite.driver <- dbDriver("SQLite")
+db <- dbConnect(sqlite.driver,
+                dbname = filename)
+                
+## Some operations
+dbListTables(db)
+demo_tb <- dbReadTable(db,"demographics")
+result_tb <- dbReadTable(db,"lab_results")
+link_tb <- dbReadTable(db,"subject_wearable_links")
+vitals_tb <- dbReadTable(db,"vitals")
+data_tb <- dbReadTable(db,"wearable_data")
+dbDisconnect(sqlite.driver, dbname = filename)
+```
+
+
