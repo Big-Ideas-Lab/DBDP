@@ -22,7 +22,7 @@ Digital biomarkers currently require extensive domain knowledge and computing sk
 * DigitalBiomarkers-RestingHeartRate
 * ...more coming soon!
 
-For inclusion into the digital biomarkers discovery pipeline, please follow the instructions in the Instructions subdiretory and create an Issue.
+For inclusion into the digital biomarkers discovery pipeline, please follow the instructions in the Instructions subdirectory and create an Issue.
 
 ***
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
