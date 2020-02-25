@@ -6,7 +6,7 @@ The DBDP is created by the **BIG IDEAS Lab** at Duke University: http://dunn.pra
 
 Digital biomarkers are digitally collected data that are transformed into indicators of health outcomes. The BIG IDEAS Lab is developing digital biomarkers for a range of diseases and conditions using a variety of sensors. 
 
-We believe that not only data, but also computational pipelines and algorithms should operate by the FAIR principles (Findable, Accessible, Interoperable, and Reusable).
+We believe that not only data, but also computational pipelines and algorithms should operate by the **FAIR principles** (Findable, Accessible, Interoperable, and Reusable).
 
 Digital biomarkers currently require extensive domain knowledge and computing skills. The purpose of the DBDP is to provide code sets, functions, and algorithms for the entire digital biomarker discovery pipeline to make discovering digital biomarkers more accessible. From the input of wearable sensor data to the development of machine learning and deep learning algorithms, we have provided an open source software resource for the digital biomarker community. 
 
