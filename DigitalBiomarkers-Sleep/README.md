@@ -1,4 +1,4 @@
-# Resting Heart Rate
+# Sleep & Circadian Rhythm
 
 **Objectives:**
 
