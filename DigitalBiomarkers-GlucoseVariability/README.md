@@ -1,3 +1,5 @@
+Please note- this is not the repo for the package. (Please see links below for installation of this Python package). For extensibility, we provide all functions from the package in this repository. 
+
 # cgmquantify: python package for analyzing glucose and glucose variability
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
