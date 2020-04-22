@@ -9,9 +9,25 @@ The comparison of the following four DTW methods based on Singularity Score and 
 * shapeDTW
 * EventDTW
 
+Table 1 in supplementary materials and Table 1 in article are available by running
+
+```
+downsample_with_dDTW.py
+downsample_with_dtw.py
+downsample_with_eventdtw.py
+downsample_with_shapedtw.py
+```
+
 ## Signal Alignment Visualization tool
 
-The alignment visualization could be realized by running programs in ***debug*** folder.
+The alignment visualization could be realized by running programs in ***debug*** folder. Figure 2(a) middle and Figure 4 are available by running 
+
+```
+downsample_ddtw_dbg.py
+downsample_dtw_dbg.py
+downsample_eventdtw_dbg.py
+downsample_shapedtw_dbg.py
+```
 
 Edit dbd_cf.py to set the name of data set and the number of signals
 ```
