@@ -10,6 +10,7 @@ The comparison of the following four DTW methods based on Singularity Score and 
 * EventDTW
 
 ## Signal Alignment Visualization tool
+![avatar](https://github.com/Big-Ideas-Lab/DBDP/blob/master/DigitalBiomarkers-Preprocessing/Signal-Alignment/figure/Alignment.jpg)
 
 The alignment visualization could be realized by running programs in ***debug*** folder.
 
