@@ -1,0 +1,60 @@
+import pandas as pd
+import math
+from parameter_cal import cf
+from dtw import dtw
+from scipy.misc import *
+from downsample.utils import get_true_aligned, get_group_number
+from parameter_cal.utils import get_SS2, get_group_devi, get_SS1, get_fact_align, get_reverse_dict, get_link_graph
+from parameter_cal.utils import load_data, cal_warped_signals, write_result_file
+from downsample.utils import slope_col, reference_slope_col, get_k_accuracy, get_warped_signals
+import os
+
+
+def norm(x, y):
+    return math.fabs(x[1] - y[1])
+
+
+def ddtw(file_name, line_num, df):
+    file_name = 'data/' + file_name
+    y_list = load_data(file_name, line_num)
+    query, reference = cal_warped_signals(y_list)
+
+    # plot warped signal
+    xvals, yinterp = get_warped_signals(query, cf.ds_time)
+
+    # calculate the corresponding point pair
+    query.drop(['shift', 't'], axis=1)
+    query2 = pd.DataFrame({'t':xvals, 'q':yinterp})
+    query2['close_index'] = 0
+    true_align_dict = get_true_aligned(cf.ds_time, query, query2)
+    group_num_dict = get_group_number(true_align_dict, query)
+
+    reference_slope_col(reference, 1)
+    slope_col(query2)
+    d, cost_matrix, acc_cost_matrix, path = dtw(reference[['t', 'avg_slope']].values, query2[['t', 'slope']].values, dist=norm)
+    fact_align_dict = get_fact_align(path)
+    reverse_dict = get_reverse_dict(path)
+    error_rate = get_k_accuracy(true_align_dict, fact_align_dict, group_num_dict)
+    SS1 = get_SS1(fact_align_dict, cf.ds_time)
+    SS2 = get_SS2(fact_align_dict, reverse_dict, cf.ds_time)
+    df.loc[line_num] = [error_rate, SS1, SS2]
+    return df
+
+if __name__ == "__main__":
+    # generate warped signal
+    os.chdir(os.path.abspath('..'))
+    data_dir = os.getcwd()+'\\data\\'
+    oslist = [f for f in os.listdir(data_dir) if os.path.isfile(data_dir+f)]
+    # target_abs_directory = os.getcwd() + '\\csv\\' + 'result.csv'
+    # df = pd.read_csv(target_abs_directory, engine='python')
+    # print(df)
+    # for i in range(0, len(oslist)):
+    for i in range(0, 84):
+        event_result = pd.DataFrame(columns=['Error rate','SS1','SS2'])
+        for j in range(1, 16):
+            event_result = ddtw(oslist[i], j, event_result)
+        print(event_result.mean())
+        print("file" + str(i)+"this is len"+str(len(event_result)))
+        write_result_file('result.csv', 'dDTW', oslist[i], event_result.mean())
+
+

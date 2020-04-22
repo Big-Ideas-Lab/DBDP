@@ -16,7 +16,7 @@ y_list = load_data(True)
 query, reference = cal_warped_signals(y_list)
 
 # plot warped signal
-xvals, yinterp = plot_warped_signals(reference, query, 1)
+xvals, yinterp = plot_warped_signals(reference, query)
 
 # normalize the signal
 reference_norm = stats.zscore(reference['q'])
