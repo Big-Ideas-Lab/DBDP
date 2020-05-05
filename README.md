@@ -1,6 +1,6 @@
 # Digital Biomarker Discovery Pipeline (DBDP)
 
-dbdp.org
+[dbdp.org](https://dbdp.org)
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
