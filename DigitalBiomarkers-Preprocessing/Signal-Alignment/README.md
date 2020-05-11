@@ -37,3 +37,5 @@ debug_line = 1
 
 ***
 Please note that this project works in Pycharm 2019.2.2
+
+Our paper ***EventDTW: An Improved Dynamic Time Warping Algorithm for Aligning Biomedical Signals of Nonuniform Sampling Frequencies*** has been published in Sensors and is avaliable online: https://www.mdpi.com/1424-8220/20/9/2700
