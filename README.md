@@ -1,6 +1,6 @@
 # Digital Biomarker Discovery Pipeline (DBDP)
 #### An open-source software platform for the development of digital biomarkers using mHealth and wearables.
-### Learn More at DBDP.org 
+### Learn More at [DBDP.org](dbdp.org) 
 #
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
