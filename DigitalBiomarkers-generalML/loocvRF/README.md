@@ -4,7 +4,7 @@
 #
  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-##### **Author:** [Brinnae Bent](runsdata.org)
+##### **Author:** [Brinnae Bent](https://runsdata.org)
 
 ##
 The DBDP is created by the **BIG IDEAS Lab** at Duke University: http://dunn.pratt.duke.edu/
