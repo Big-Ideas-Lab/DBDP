@@ -15,7 +15,7 @@ If you use the DBDP in your work, please cite the DBDP: dbdp.org.
 The motivation behind this project was the development of a random forest model with a leave-one-person-out-cross-validation (LOOCV) validation method. This general framework has been used in multiple studies, and is provided here in its general frame for you to use.  
 
 ### Dependencies
-pandas, numpy, matplotlib.pyplot
+pandas, numpy, matplotlib.pyplot, [sklearn](https://scikit-learn.org/stable/) 
 
 ### Instructions
 
