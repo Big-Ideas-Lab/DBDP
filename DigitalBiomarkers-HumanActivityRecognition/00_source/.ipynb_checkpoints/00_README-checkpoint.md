@@ -1,0 +1,3 @@
+This folder contains the base data we were given. For preprocessing required to get to this step, you'll have to look at earlier modules in the pipeline. 
+
+The two notebooks produce files that are in 10_code/10_pre_outlier_removal_processing. That's essentially how this structure works. A folder contains notebooks and data used in those notebooks. The output of the notebooks is in the next folder, where different notebooks use that output.
