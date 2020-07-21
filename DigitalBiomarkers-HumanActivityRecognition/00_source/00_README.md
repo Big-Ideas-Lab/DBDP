@@ -1,3 +1,3 @@
-This folder contains the base data we were given. For preprocessing required to get to this step, you'll have to look at earlier modules in the pipeline. 
+This module begins with preprocessing data from the Empatica E4 wearable, though it does not start from the raw data. For preprocessing required to get to this step, you'll have to look at earlier modules in the pipeline. 
 
-The two notebooks produce files that are in 10_code/10_pre_outlier_removal_processing. That's essentially how this structure works. A folder contains notebooks and data used in those notebooks. The output of the notebooks is in the next folder, where different notebooks use that output.
+The data used in this module is available upon request. Please contact Brinnae Bent (brinnae.bent@duke.edu) or Dr. Jessilyn Dunn (jessilyn.dunn@duke.edu).
