@@ -1,0 +1,3 @@
+Model templates are the common aspects of the models we use. There is one for each dataset. They are used in both the Pytorch and TensorFlow models, and any package specific parts are explicitly mentioned as such.
+
+The models have been divided based off of what library was used to write them and then they were further divided based off what dataset they used. Each "model" is a prepared notebook; you still have to train it. (Pretrained models where?)
