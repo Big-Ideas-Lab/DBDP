@@ -1,5 +1,13 @@
 # Resting Heart Rate
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+If you use this method in your work, please cite the DBDP: dbdp.org and the references at the bottom of this page.
+
+*This method is featured in our recent publication on the DBDP:*
+> Bent, B., Wang, K., Grzesiak, E., Jiang, C., Qi, Y., Jiang, Y., Cho, P., Zingler, K., Ogbeide, F.I., Zhao, A., Runge, R., Sim, I., Dunn, J. (2020). The Digital Biomarker      Discovery Pipeline: An open source software platform for the development of digital biomarkers using mHealth and wearables data. Journal of Clinical and Translational Science, 1-28. doi:10.1017/cts.2020.511 ([Link to Open Access Article](https://www.cambridge.org/core/journals/journal-of-clinical-and-translational-science/article/digital-biomarker-discovery-pipeline-an-open-source-software-platform-for-the-development-of-digital-biomarkers-using-mhealth-and-wearables-data/A6696CEF138247077B470F4800090E63))
+
+
 **Objectives:** Estimate the resting heart rate biomarker using:
 1. _Personal_ data (i.e. different estimates for different individuals)
 2. _Accessible_ wearable device data, specifically Fitbit data
