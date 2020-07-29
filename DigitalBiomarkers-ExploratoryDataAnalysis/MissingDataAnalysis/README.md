@@ -42,7 +42,7 @@ R
 
 ### References
 
-Here you should list any references you used to create this code.
+None.
 
 
 License
