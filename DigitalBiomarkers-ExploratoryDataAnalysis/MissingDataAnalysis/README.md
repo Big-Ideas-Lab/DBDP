@@ -1,8 +1,10 @@
 # Missing Data Analysis
 
-[![License: Apache](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 If you use this method in your work, please cite the DBDP: dbdp.org and the references at the bottom of this page.
+
+### Description
 
 Visualization of the percent missingness per day and per hour for each subject present in the dataframe.
 
