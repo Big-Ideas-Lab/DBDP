@@ -39,7 +39,7 @@ The results of this method on the following wearable sensors:
 | Heart Rate Variability |  | Non-specific ECG, PPG | Python | Ongoing Development |
 | Sleep |  | Garmin vivosmart 3 | Python | In Development |
 | Mental Health |  | Actigraph, EEG | Python | In Development |
-| Human Activity Recognition |  | Empatica E4, Non-specific | Python | In Development |
+| Human Activity Recognition |  | Empatica E4, Non-specific | Python | Ongoing Development |
 
 
 
