@@ -36,7 +36,12 @@ Missing_Data_Plot.R script: plot that gives 1 subplot per unique `subject_id`, x
 Dependencies:
 
 ```sh
-R 
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(tidyr)
+library(anytime)
 ```
 
 
