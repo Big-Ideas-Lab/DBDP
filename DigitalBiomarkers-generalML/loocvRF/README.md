@@ -1,5 +1,5 @@
 # loocvRF
-#### A solution for leave-one-person-out-cross-validation random forests in Python
+#### A solution for leave-one-person-out-cross-validation random forests in Python. Read blog instructions [here](https://medium.com/analytics-vidhya/step-by-step-guide-to-leave-one-person-out-cross-validation-with-random-forests-in-python-34b2eaefb628?source=friends_link&sk=638b3578186a54f160235cf007f8ffe9).
 ### This resource is part of the DBDP. Read more about the DBDP [here](dbdp.org).
 #
  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
